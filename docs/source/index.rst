@@ -127,21 +127,21 @@ Welcome to AiiDA's documentation!
    :caption: Reference
    :hidden:
 
-   reference/placeholder
+   reference/command_line
+   reference/apidoc/aiida.rst
+   reference/rest_api
 
 .. toctree::
    :maxdepth: 2
-   :caption: Plugins
-   :hidden:
+   :caption: Internal architecture
 
-   plugins/placeholder
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Development
-   :hidden:
-
-   development/placeholder
+   internal_architecture/global_design
+   internal_architecture/orm
+   internal_architecture/data_storage
+   internal_architecture/engine
+   internal_architecture/plugin_system
+   internal_architecture/rest_api
+   internal_architecture/documentation_cookbook
 
 ***********
 How to cite

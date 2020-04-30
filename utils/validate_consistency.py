@@ -166,7 +166,7 @@ def validate_verdi_documentation():
     replace_block_in_file(filepath_verdi_overview, overview_block_start_marker, overview_block_end_marker, block)
 
     # Replacing the block with the commands of `verdi`
-    filepath_verdi_commands = os.path.join(ROOT_DIR, 'docs', 'source', 'verdi', 'verdi_user_guide.rst')
+    filepath_verdi_commands = os.path.join(ROOT_DIR, 'docs', 'source', 'reference', 'command_line.rst')
     commands_block_start_marker = '.. _verdi_commands:'
     commands_block_end_marker = '.. END_OF_VERDI_COMMANDS_MARKER'
 
