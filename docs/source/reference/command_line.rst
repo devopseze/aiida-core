@@ -58,7 +58,6 @@ Below is a list with all available subcommands.
       setup      Setup a new code.
       show       Display detailed information for a code.
 
-
 .. _verdi_comment:
 
 ``verdi comment``
@@ -79,7 +78,6 @@ Below is a list with all available subcommands.
       show    Show the comments of one or multiple nodes.
       update  Update a comment of a node.
 
-
 .. _verdi_completioncommand:
 
 ``verdi completioncommand``
@@ -98,7 +96,6 @@ Below is a list with all available subcommands.
 
     Options:
       --help  Show this message and exit.
-
 
 .. _verdi_computer:
 
@@ -126,7 +123,6 @@ Below is a list with all available subcommands.
       show       Show detailed information for a computer.
       test       Test the connection to a computer.
 
-
 .. _verdi_config:
 
 ``verdi config``
@@ -142,7 +138,6 @@ Below is a list with all available subcommands.
       --global  Apply the option configuration wide.
       --unset   Remove the line matching the option name from the config file.
       --help    Show this message and exit.
-
 
 .. _verdi_daemon:
 
@@ -167,7 +162,6 @@ Below is a list with all available subcommands.
       status   Print the status of the current daemon or all daemons.
       stop     Stop the daemon.
 
-
 .. _verdi_data:
 
 ``verdi data``
@@ -181,7 +175,6 @@ Below is a list with all available subcommands.
 
     Options:
       --help  Show this message and exit.
-
 
 .. _verdi_database:
 
@@ -200,7 +193,6 @@ Below is a list with all available subcommands.
     Commands:
       integrity  Check the integrity of the database and fix potential issues.
       migrate    Migrate the database to the latest schema version.
-
 
 .. _verdi_devel:
 
@@ -223,7 +215,6 @@ Below is a list with all available subcommands.
       tests             Run the unittest suite or parts of it.
       validate-plugins  Validate all plugins by checking they can be loaded.
 
-
 .. _verdi_export:
 
 ``verdi export``
@@ -243,7 +234,6 @@ Below is a list with all available subcommands.
       inspect  Inspect contents of an exported archive without importing it.
       migrate  Migrate an export archive to a more recent format version.
 
-
 .. _verdi_graph:
 
 ``verdi graph``
@@ -260,7 +250,6 @@ Below is a list with all available subcommands.
 
     Commands:
       generate  Generate a graph from a ROOT_NODE (specified by pk or uuid).
-
 
 .. _verdi_group:
 
@@ -288,7 +277,6 @@ Below is a list with all available subcommands.
       remove-nodes  Remove nodes from a group.
       show          Show information for a given group.
 
-
 .. _verdi_help:
 
 ``verdi help``
@@ -302,7 +290,6 @@ Below is a list with all available subcommands.
 
     Options:
       --help  Show this message and exit.
-
 
 .. _verdi_import:
 
@@ -362,7 +349,6 @@ Below is a list with all available subcommands.
 
       --help                          Show this message and exit.
 
-
 .. _verdi_node:
 
 ``verdi node``
@@ -390,7 +376,6 @@ Below is a list with all available subcommands.
       show         Show generic information on one or more nodes.
       tree         Show a tree of nodes starting from a given node.
 
-
 .. _verdi_plugin:
 
 ``verdi plugin``
@@ -407,7 +392,6 @@ Below is a list with all available subcommands.
 
     Commands:
       list  Display a list of all available plugins.
-
 
 .. _verdi_process:
 
@@ -434,7 +418,6 @@ Below is a list with all available subcommands.
       status     Print the status of one or multiple processes.
       watch      Watch the state transitions for a process.
 
-
 .. _verdi_profile:
 
 ``verdi profile``
@@ -454,7 +437,6 @@ Below is a list with all available subcommands.
       list        Display a list of all available profiles.
       setdefault  Set a profile as the default one.
       show        Show details for a profile.
-
 
 .. _verdi_quicksetup:
 
@@ -504,7 +486,6 @@ Below is a list with all available subcommands.
 
       --help                          Show this message and exit.
 
-
 .. _verdi_rehash:
 
 ``verdi rehash``
@@ -525,7 +506,6 @@ Below is a list with all available subcommands.
 
       -f, --force               Do not ask for confirmation.
       --help                    Show this message and exit.
-
 
 .. _verdi_restapi:
 
@@ -552,7 +532,6 @@ Below is a list with all available subcommands.
 
       --hookup / --no-hookup   Hookup app to flask server
       --help                   Show this message and exit.
-
 
 .. _verdi_run:
 
@@ -583,7 +562,6 @@ Below is a list with all available subcommands.
                                       (use full entrypoint strings or "all").
 
       --help                          Show this message and exit.
-
 
 .. _verdi_setup:
 
@@ -628,7 +606,6 @@ Below is a list with all available subcommands.
 
       --help                          Show this message and exit.
 
-
 .. _verdi_shell:
 
 ``verdi shell``
@@ -652,7 +629,6 @@ Below is a list with all available subcommands.
 
       --help                          Show this message and exit.
 
-
 .. _verdi_status:
 
 ``verdi status``
@@ -666,7 +642,6 @@ Below is a list with all available subcommands.
 
     Options:
       --help  Show this message and exit.
-
 
 .. _verdi_user:
 
@@ -686,7 +661,5 @@ Below is a list with all available subcommands.
       configure    Configure a new or existing user.
       list         Show a list of all users.
       set-default  Set a user as the default user for the profile.
-
-
 
 .. END_OF_VERDI_COMMANDS_MARKER

@@ -4,7 +4,6 @@
 AiiDA REST API
 **************
 
-
 Available endpoints and responses
 =================================
 
@@ -22,9 +21,7 @@ The header is a standard HTTP response header with the additional custom field `
 The JSON object mainly contains the list of the results returned by the API (in the ``data`` key).
 It also contains information on the request (keys ``method``, ``url``, ``url_root``, ``path``, ``query_string``, and ``resource_type``).
 
-
 .. _restapi_apache:
-
 
 Computers
 ---------
@@ -84,8 +81,6 @@ Computers
           "url_root": "http://localhost:5000/"
         }
 
-
-
 2. Get details of a single *Computer* object:
 
     REST URL::
@@ -120,7 +115,6 @@ Computers
           "url": "http://localhost:5000/api/v4/computers/5d490d77",
           "url_root": "http://localhost:5000/"
         }
-
 
 Nodes
 -----
@@ -396,7 +390,6 @@ Nodes
           "url_root": "http://localhost:5000/"
         }
 
-
 6. Filter the incoming/outgoing of a node by their full type.
 
     REST URL::
@@ -474,8 +467,6 @@ Nodes
           "url_root": "http://localhost:5000/"
         }
 
-
-
 7. Getting the list of the attributes/extras of a specific node.
 
     REST URL::
@@ -507,8 +498,6 @@ Nodes
           "url_root": "http://localhost:5000/"
         }
 
-
-
     REST URL::
 
         http://localhost:5000/api/v4/nodes/ffe11/contents/extras
@@ -537,7 +526,6 @@ Nodes
           "url_root": "http://localhost:5000/"
         }
 
-
 8. Getting a user-defined list of attributes/extras of a specific node.
 
     REST URL::
@@ -565,8 +553,6 @@ Nodes
           "url": "http://localhost:5000/api/v4/nodes/ffe11/contents/attributes?attributes_filter=append_text,is_local",
           "url_root": "http://localhost:5000/"
         }
-
-
 
     REST URL::
 
@@ -679,7 +665,6 @@ Nodes
 
         It downloads the file.
 
-
 12. There are specific download formats (check ``nodes/download_formats`` endpoint) available to download different
     types of nodes. This endpoint is used to download file in given format.
 
@@ -767,7 +752,6 @@ CalcJobs
             "url_root": "http://localhost:5000/"
         }
 
-
 Users
 -----
 
@@ -843,7 +827,6 @@ Users
 
 Groups
 ------
-
 
 1. Getting a list of groups
 
@@ -926,8 +909,6 @@ Groups
           "url_root": "http://localhost:5000/"
         }
 
-
-
 Filtering results
 =================
 
@@ -963,7 +944,6 @@ All of them must be followed by the operator ``=``.
             http://localhost:5000/api/v4/computers?orderby=+name
             http://localhost:5000/api/v4/computers?orderby=-uuid
 
-
     :attributes_filter: This key is used to specify which attributes of a specific object have to be returned.
         The desired attributes have to be provided as a comma-separated list of values.
         It is used in the endpoints ``/contents/attributes`` and ``/nodes``. Example:
@@ -971,7 +951,6 @@ All of them must be followed by the operator ``=``.
         ::
 
             http://localhost:5000/api/v4/nodes/4fb10ef1/contents/attributes?attributes_filter=append_text,prepend_text
-
 
     :extras_filter: Similar to ``attributes_filter`` but for extras. It is used in the endpoints ``/contents/extras``
         and ``/nodes``.
@@ -1149,7 +1128,6 @@ Examples:
     - ``http://localhost:5000/api/v4/nodes?id>578`` selects the nodes having an id larger than 578.
     - ``http://localhost:5000/api/v4/users/?last_name<="m"`` selects only the users whose last name begins with a
       character in the range [a-m].
-
 
 .. note:: Node types have to be specified by a string that defines their position in the AiiDA source tree ending
     with a dot. Examples:
