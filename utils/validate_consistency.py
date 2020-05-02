@@ -167,7 +167,7 @@ def validate_verdi_documentation():
 
     # Replacing the block with the commands of `verdi`
     filepath_verdi_commands = os.path.join(ROOT_DIR, 'docs', 'source', 'reference', 'command_line.rst')
-    commands_block_start_marker = '.. _verdi_commands:'
+    commands_block_start_marker = '.. _reference:command-line:verdi:'
     commands_block_end_marker = '.. END_OF_VERDI_COMMANDS_MARKER'
 
     # Generate the new block with the command help strings
@@ -178,7 +178,7 @@ def validate_verdi_documentation():
     for name, command in sorted(verdi.commands.items()):
         ctx = click.Context(command)
 
-        header_label = '.. _verdi_{name:}:'.format(name=name)
+        header_label = '.. _reference:command-line:verdi-{name:}:'.format(name=name)
         header_string = '``verdi {name:}``'.format(name=name)
         header_underline = '-' * len(header_string)
 
