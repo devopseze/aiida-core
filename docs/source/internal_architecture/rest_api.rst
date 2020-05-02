@@ -1,4 +1,4 @@
-.. _core-development:rest-api:
+.. _internal_architecture:rest-api:
 
 ********
 REST API

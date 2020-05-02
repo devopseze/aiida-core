@@ -1,23 +1,23 @@
-.. _core-development:orm:
+.. _internal_architecture:orm:
 
 ****
 ORM
 ****
 
 
-.. _core-development:orm:entities:
+.. _internal_architecture:orm:entities:
 
 Entities & nodes
 =================
 
 
-.. _core-development:orm:querybuilder:
+.. _internal_architecture:orm:querybuilder:
 
 Querybuilder
 =============
 
 
-.. _core-development:orm:ontology:
+.. _internal_architecture:orm:ontology:
 
 AiiDA ontology
 ===============

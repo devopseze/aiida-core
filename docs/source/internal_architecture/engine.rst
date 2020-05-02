@@ -1,4 +1,4 @@
-.. _core-development:engine:
+.. _internal_architecture:engine:
 
 *******
 Engine

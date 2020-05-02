@@ -1,23 +1,23 @@
-.. _core-development:data-storage:
+.. _internal_architecture:data-storage:
 
 *************
 Data storage
 *************
 
 
-.. _core-development:orm:database:
+.. _internal_architecture:orm:database:
 
 Database schema & migrations
 =============================
 
 
-.. _core-development:orm:repository:
+.. _internal_architecture:orm:repository:
 
 File repository
 ================
 
 
-.. _core-development:orm:export:
+.. _internal_architecture:orm:export:
 
 Export archive
 ===============

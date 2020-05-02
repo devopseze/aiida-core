@@ -1,4 +1,4 @@
-.. _core-development:global-design:
+.. _internal_architecture:global-design:
 
 ************************
 Global design decisions
