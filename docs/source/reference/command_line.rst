@@ -482,10 +482,8 @@ Below is a list with all available subcommands.
       --institution NONEMPTYSTRING    Institution of the user.  [required]
       --db-engine [postgresql_psycopg2]
                                       Engine to use to connect to the database.
-
       --db-backend [django|sqlalchemy]
                                       Database backend to use.
-
       --db-host HOSTNAME              Database server host. Leave empty for "peer"
                                       authentication.
 
@@ -611,13 +609,10 @@ Below is a list with all available subcommands.
       --first-name NONEMPTYSTRING     First name of the user.  [required]
       --last-name NONEMPTYSTRING      Last name of the user.  [required]
       --institution NONEMPTYSTRING    Institution of the user.  [required]
-
       --db-engine [postgresql_psycopg2]
                                       Engine to use to connect to the database.
-
       --db-backend [django|sqlalchemy]
                                       Database backend to use.
-
       --db-host HOSTNAME              Database server host. Leave empty for "peer"
                                       authentication.
 
