@@ -65,26 +65,19 @@ In order to deploy production instances of the REST API for serving your data to
 
 In the following, we assume you have a working installation of Apache with the ``mod_wsgi`` `WSGI module <modwsgi.readthedocs.io/>`_ enabled.
 
-The goal of the example is to hookup the APIs ``django`` and ``sqlalchemy`` pointing to two AiiDA profiles, called for
-simplicity ``django`` and ``sqlalchemy``.
+The goal of the example is to hookup the APIs ``django`` and ``sqlalchemy`` pointing to two AiiDA profiles, called for simplicity ``django`` and ``sqlalchemy``.
 
 All the relevant files are enclosed under the path ``/docs/wsgi/`` starting from the AiiDA source code path.
-In each of the folders ``app1/`` and ``app2/``, there is a file named ``rest.wsgi`` containing a python script that
-instantiates and configures a python web app called ``application``, according to the rules of ``mod_wsgi``.
-For how the script is written, the object ``application`` is configured through the file ``config.py`` contained in the
-same folder. Indeed, in ``app1/config.py`` the variable ``aiida-profile`` is set to ``"django"``, whereas in
-``app2/config.py`` its value is ``"sqlalchemy"``.
+In each of the folders ``app1/`` and ``app2/``, there is a file named ``rest.wsgi`` containing a python script that instantiates and configures a python web app called ``application``, according to the rules of ``mod_wsgi``.
+For how the script is written, the object ``application`` is configured through the file ``config.py`` contained in the same folder.
+Indeed, in ``app1/config.py`` the variable ``aiida-profile`` is set to ``"django"``, whereas in ``app2/config.py`` its value is ``"sqlalchemy"``.
 
-Anyway, the path where you put the ``.wsgi`` file as well as its name are irrelevant as long as they are correctly
-referred to in the Apache configuration file, as shown later on.
-Similarly, you can place ``config.py`` in a custom path, provided you change the variable ``config_file_path`` in
-the ``wsgi file`` accordingly.
+Anyway, the path where you put the ``.wsgi`` file as well as its name are irrelevant as long as they are correctly referred to in the Apache configuration file, as shown later on.
+Similarly, you can place ``config.py`` in a custom path, provided you change the variable ``config_file_path`` in the ``wsgi file`` accordingly.
 
 In ``rest.wsgi`` probably the only options you might want to change is ``catch_internal_server``.
-When set to ``True``, it lets the exceptions thrown during the execution of the app propagate all the way through until
-they reach the logger of Apache.
-Especially when the app is not entirely stable yet, one would like to read the full python error traceback in the
-Apache error log.
+When set to ``True``, it lets the exceptions thrown during the execution of the app propagate all the way through until they reach the logger of Apache.
+Especially when the app is not entirely stable yet, one would like to read the full python error traceback in the Apache error log.
 
 Finally, you need to setup the Apache site through a proper configuration file.
 We provide two template files: ``one.conf`` or ``many.conf``.
@@ -93,16 +86,13 @@ Apache usually creates multiple process dynamically and with this configuration 
 
 The script ``many.conf``, instead, defines two different process groups, one for each app.
 So the processes created dynamically by Apache will always be handling one app each.
-The minimal number of Apache daemon processes equals the number of apps, contrarily to the first architecture, where
-one process is enough to handle two or even a larger number of apps.
+The minimal number of Apache daemon processes equals the number of apps, contrarily to the first architecture, where one process is enough to handle two or even a larger number of apps.
 
 Let us call the two apps for this example ``django`` and ``sqlalchemy``.
-In both ``one.conf`` and ``many.conf``, the important directives that should be updated if one changes the paths or
-names of the apps are:
+In both ``one.conf`` and ``many.conf``, the important directives that should be updated if one changes the paths or names of the apps are:
 
     - ``WSGIProcessGroup`` to define the process groups for later reference.
-      In ``one.conf`` this directive appears only once to define the generic group ``profiles``, as there is only one
-      kind of process handling both apps.
+      In ``one.conf`` this directive appears only once to define the generic group ``profiles``, as there is only one kind of process handling both apps.
       In ``many.conf`` this directive appears once per app and is embedded into a "Location" tag, e.g.::
 
         <Location /django>
@@ -120,21 +110,18 @@ names of the apps are:
                 Require all granted
         </Directory>
 
-The latest step is to move either ``one.conf`` or ``many.conf`` into the Apache configuration folder and restart
-the Apache server. In Ubuntu, this is usually done with the commands:
+The latest step is to move either ``one.conf`` or ``many.conf`` into the Apache configuration folder and restart the Apache server.
+In Ubuntu, this is usually done with the commands:
 
 .. code-block:: bash
 
     cp <conf_file>.conf /etc/apache2/sites-enabled/000-default.conf
     sudo service apache2 restart
 
-We believe the two basic architectures we have just explained can be successfully applied in many different deployment
-scenarios.
-Nevertheless, we suggest users who need finer tuning of the deployment setup to look into to the official documentation
-of `Apache <https://httpd.apache.org/>`_ and, more importantly, `WSGI <wsgi.readthedocs.io/>`__.
+We believe the two basic architectures we have just explained can be successfully applied in many different deployment scenarios.
+Nevertheless, we suggest users who need finer tuning of the deployment setup to look into to the official documentation of `Apache <https://httpd.apache.org/>`_ and, more importantly, `WSGI <wsgi.readthedocs.io/>`__.
 
-The URLs of the requests handled by Apache must start with one of the paths specified in the directives
-``WSGIScriptAlias``.
+The URLs of the requests handled by Apache must start with one of the paths specified in the directives ``WSGIScriptAlias``.
 These paths identify uniquely each app and allow Apache to route the requests to their correct apps.
 Examples of well-formed URLs are:
 
@@ -143,10 +130,8 @@ Examples of well-formed URLs are:
     curl http://localhost/django/api/v4/computers -X GET
     curl http://localhost/sqlalchemy/api/v4/computers -X GET
 
-The first (second) request will be handled by the app ``django`` (``sqlalchemy``), namely will serve results fetched
-from the profile ``django`` (``sqlalchemy``).
-Notice that we haven't specified any port in the URLs since Apache listens conventionally to port 80, where any request
-lacking the port is automatically redirected.
+The first (second) request will be handled by the app ``django`` (``sqlalchemy``), namely will serve results fetched from the profile ``django`` (``sqlalchemy``).
+Notice that we haven't specified any port in the URLs since Apache listens conventionally to port 80, where any request lacking the port is automatically redirected.
 
 
 
